@@ -45,7 +45,7 @@ const navigate = useNavigate();
     <div className='flex flex-row'>
     <div className = "w-2/5 bg-black h-screen">
       <div className="flex justify-center items-center  ">
-      <div className='text-white  text-7xl font-bold  lg:py-80'>Board.</div>
+      <div className='text-white  text-7xl font-bold font-montse lg:py-80'>Board.</div>
       </div>
 
 
@@ -54,8 +54,8 @@ const navigate = useNavigate();
 
       <div className=' lg:mx-60 lg:my-24  '>
 
-        <p className='monste font-bold text-start text-4xl'>Sign In</p>
-        <p className='mt-2 font-normal  text-start text-base'>Sign in to your Account</p>
+        <p className='font-monste font-bold text-start text-4xl'>Sign In</p>
+        <p className='font-lato mt-2 font-normal  text-start text-base'>Sign in to your Account</p>
 
         <div className= "my-7 flex flex-row">
         <button  class=" flex w-48 mr-6 opacity-75 h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.google}></img>Sign in with Google</button>
@@ -69,7 +69,7 @@ const navigate = useNavigate();
     
         <div class="space-y-6" >
       <div>
-        <p  class="text-start text-sm font-medium  text-gray-900">Email address</p>
+        <p  class="text-start font-lato text-sm font-medium  text-gray-900">Email address</p>
         <div class="mt-2">
           <input id="email" name="email" type="email" autocomplete="email" required class="p-3 border-1 rounded-xlg block w-full h-10 bg-admin-whiteSmokeLight"
             onChange={event =>setValues((prev)=>({...prev,email:event.target.value}))}/>
@@ -79,7 +79,7 @@ const navigate = useNavigate();
 
       <div>
         <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+          <label for="password" class="block font-lato text-sm font-medium leading-6 text-gray-900">Password</label>
          
         </div>
         <div class="mt-2">
@@ -94,7 +94,7 @@ const navigate = useNavigate();
           <b className=' items-start text-coralRed font-normal text-sm'>{errorMsg}</b>
 
       <div>
-        <button type="submit" class="flex w-full text-white  h-10 justify-center rounded-xlg bg-black px-3 py-1.5 text-base font-bold "onClick={handleSubmisson}  disabled={submitbuttondisable}>Sign in</button>
+        <button type="submit" class="flex w-full font-montse text-white  h-10 justify-center rounded-xlg bg-black px-3 py-1.5 text-base font-bold "onClick={handleSubmisson}  disabled={submitbuttondisable}>Sign In</button>
       </div>
     </div>
     </div>

@@ -28,14 +28,29 @@ ChartJs.register(
 
 function DashBoard() {
 
+  function generateRandomArray() {
+    var array = [];
+    
+    for (var i = 0; i < 6; i++) {
+      var randomNumber = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
+      array.push(randomNumber);
+    }
+    
+    return array;
+  }
+  
+  var randomArray1 = generateRandomArray();
+  var randomArray2 = generateRandomArray();
 
+ 
+  
   const data ={
 
 
     labels:["0","Week 1", "Week 2","Week 3","Week 4" ],
     datasets: [
       {
-        data:[100,410,150,480,180,420],
+        data:randomArray1,
         backgroundColor:'transparent',
         borderColor:'#E9A0A0',
         pointBorderColor:'transparent',
@@ -45,7 +60,7 @@ function DashBoard() {
 
       },
       {
-        data:[200,390,200,300,200,430],
+        data:randomArray2,
         backgroundColor:'transparent',
         borderColor:'#9BDD7C',
         pointBorderColor:'transparent',
@@ -88,15 +103,33 @@ function DashBoard() {
 
  
 
-    
+  function generateRandomNumbers() {
+    const numbers = [];
+  
+    // Generate two random numbers between 0 and 100
+    const num1 = Math.floor(Math.random() * 101);
+    const num2 = Math.floor(Math.random() * (100 - num1 + 1));
+  
+    // Calculate the third number to ensure the sum is 100
+    const num3 = 100 - num1 - num2;
+  
+    numbers.push(num1, num2, num3);
+    return numbers;
+  }
+  
+  const generatedNumbers = generateRandomNumbers();
+  console.log(generatedNumbers);
+
   
 
 
   const myData = [
-    { title: "Dogs", value: 55, color: "#98D89E" },
-    { title: "Cats", value: 31, color: "#F6DC7D" },
-    { title: "Dragons", value: 14, color: "#EE8484" },
+    { title: "Dogs", value: generatedNumbers[0], color: "#98D89E" },
+    { title: "Cats", value: generatedNumbers[1], color: "#F6DC7D" },
+    { title: "Dragons", value: generatedNumbers[2], color: "#EE8484" },
   ];
+
+ 
   
   return (
     <>
@@ -108,18 +141,18 @@ function DashBoard() {
 
         <div className='p-12 '>
 
-            <div className='text-4xl font-bold py-2  text-start '>Board.</div>
-            <div  class=" my-7 flex text-start font-bold"> <img className='pr-4' src = {Resources.images.dashboard}></img>Dashboard</div>
-            <div  class=" my-7 flex text-start font-normal"> <img className='pr-4' src = {Resources.images.transactions}></img>Transactions</div>
-            <div  class=" my-7 flex text-start font-normal"> <img className='pr-4' src = {Resources.images.schedule}></img>Schedules</div>
-            <div  class=" my-7 flex text-start font-normal"> <img className='pr-4' src = {Resources.images.user}></img>User</div>
+            <div className='font-montse text-4xl font-extrabold py-2  text-start '>Board.</div>
+            <div  class="font-montse  my-7 flex text-start font-bold"> <img className='pr-4' src = {Resources.images.dashboard}></img>Dashboard</div>
+            <div  class="font-montse  my-7 flex text-start font-normal"> <img className='pr-4' src = {Resources.images.transactions}></img>Transactions</div>
+            <div  class="font-montse  my-7 flex text-start font-normal"> <img className='pr-4' src = {Resources.images.schedule}></img>Schedules</div>
+            <div  class="font-montse  my-7 flex text-start font-normal"> <img className='pr-4' src = {Resources.images.user}></img>User</div>
 
             <div  class=" my-7 flex text-start"> <img className='pr-4' src = {Resources.images.settings}></img>Settings</div>
 
 
-            <div className=' flex  flex-col  justify-end border border-white lg:h-68 text-start'>
-                <div className='mb-3'>Help</div>
-                <div className='block'>Contact us</div>
+            <div className=' flex  flex-col  justify-end   lg:h-68 text-start'>
+                <div className='font-montse mb-3'>Help</div>
+                <div className='font-montse block'>Contact us</div>
                 
 
             </div>
@@ -169,59 +202,59 @@ function DashBoard() {
     </div>
 
 
-    <div className=' flex  md:flex-row flex-col justify-between border-2 border-black my-9'>
+    <div className=' flex  md:flex-row flex-col justify-between  my-9'>
 
-      <div className='h-30 w-56 border-2 border-black bg-Card1 rounded-2.5xl p-5'> 
-      <div className='border-1 border-red-900 flex justify-end'>
+      <div className='h-30 w-56  bg-Card1 rounded-2.5xl p-5'> 
+      <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.download}></img>
 
       </div>
 
       <div  className='text-start'>
         <p className='text-sm font-medium text-black '>Total Revenues</p>
-        <p className='text-2xl font-bold text-black '>$2313213</p>
+        <p className='text-2xl   font-bold text-black '>${randomArray1[3]}</p>
 
 
       </div>
       
       </div>
-      <div className='h-30 w-56 border-2 border-black bg-Card2Pink rounded-2.5xl p-5'> 
-      <div className='border-1 border-red-900 flex justify-end'>
+      <div className='h-30 w-56  bg-Card2Pink rounded-2.5xl p-5'> 
+      <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.clipped}></img>
 
       </div>
 
       <div  className='text-start'>
         <p className='text-sm font-medium text-black '>Total Transactions</p>
-        <p className='text-2xl font-bold text-black '>13213</p>
+        <p className='text-2xl font-bold  text-black '>{randomArray1[0]}</p>
 
 
       </div>
       
       </div>
-      <div className='h-30 w-56 border-2 border-black bg-Card3Pink rounded-2.5xl p-5'> 
-      <div className='border-1 border-red-900 flex justify-end'>
+      <div className='h-30 w-56  bg-Card3Pink rounded-2.5xl p-5'> 
+      <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.like}></img>
 
       </div>
 
       <div  className='text-start'>
         <p className='text-sm font-medium text-black '>Total Likes</p>
-        <p className='text-2xl font-bold text-black '>13213</p>
+        <p className='text-2xl font-bold text-black  '>{randomArray1[1]}</p>
 
 
       </div>
       
       </div>
-      <div className='h-30 w-56 border-2 border-black bg-Card4blue rounded-2.5xl p-5'> 
-      <div className='border-1 border-red-900 flex justify-end'>
+      <div className='h-30 w-56  bg-Card4blue rounded-2.5xl p-5'> 
+      <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.people}></img>
 
       </div>
 
       <div  className='text-start'>
         <p className='text-sm font-medium text-black '>Total Users</p>
-        <p className='text-2xl font-bold text-black '>13213</p>
+        <p className='text-2xl font-sans font-bold text-black  '>{randomArray1[2]}</p>
 
 
       </div>
@@ -239,10 +272,10 @@ function DashBoard() {
 
 
 {/* Chart. */}
-<div className='h-80 mb-10 border-1  border-black p-10 bg-white rounded-2.5xl'>
+<div className='h-80 mb-10  p-10 bg-white rounded-2.5xl'>
 
   {/* heading */}
-<p className=' flex items-start font-bold text-lg'>Activities</p>
+<p className=' flex  items-start font-bold text-lg'>Activities</p>
 
 <div className='flex flex-row justify-between'>
 
@@ -299,7 +332,7 @@ function DashBoard() {
 {/* Graph */}
 <div   className='flex flex-row justify-between'>
 {/* Left region*/}
-<div className='lg:w-125 h-64 border-1 border-black p-10 bg-white rounded-2.5xl'>
+<div className='lg:w-125 h-64  p-10 bg-white rounded-2.5xl'>
 
 
 {/* heading */}
@@ -322,7 +355,7 @@ function DashBoard() {
 <div className='flex flex-row p-3 h-40'>
 
 
-<div className='border-2 border-black w-5/12'>
+<div className=' w-5/12'>
 <PieChart
         // your data
         data={myData}
@@ -332,9 +365,9 @@ function DashBoard() {
 
 </div>
 {/* Right Region of pie chart*/}
-<div className='w-7/12 border-2 border-black ml-5'>
+<div className='w-7/12  ml-5'>
 
-  <div className='flex flex-col   border-2 border-black'>
+  <div className='flex flex-col   '>
 
 
 {/* Percentage shown of parts*/}
@@ -343,8 +376,8 @@ function DashBoard() {
         <img  className = "p-1" src={Resources.images.circle1}></img>
         <div>
         <div className='flex flex-col'>
-        <p className='font-bold text-sm '>Basic Trees</p>
-        <p className=' flex items-start font-normal text-xs text-texts'>55%</p>
+        <p className='font-bold font-montse text-sm '>Basic Tees</p>
+        <p className=' flex items-start font-normal text-xs text-texts'>{generatedNumbers[0]}%</p>
       </div>
 
         </div>
@@ -358,8 +391,8 @@ function DashBoard() {
         <img  className = "p-1" src={Resources.images.circle2}></img>
         <div>
         <div className='flex flex-col'>
-        <p className='font-bold text-sm '>Custom short Pants</p>
-        <p className=' flex items-start font-normal text-xs text-texts'>55%</p>
+        <p className='font-bold text-sm font-montse '>Custom short Pants</p>
+        <p className=' flex items-start font-normal text-xs text-texts'>{generatedNumbers[1]}%</p>
       </div>
 
         </div>
@@ -373,8 +406,8 @@ function DashBoard() {
         <img  className = "p-1" src={Resources.images.circle3}></img>
         <div>
         <div className='flex flex-col'>
-        <p className='font-bold text-sm '>Basic Trees</p>
-        <p className=' flex items-start font-normal text-xs text-texts'>55%</p>
+        <p className='font-bold text-sm font-montse'>Super Hoodies</p>
+        <p className=' flex items-start font-normal text-xs text-texts'>{generatedNumbers[2]}%</p>
       </div>
 
         </div>
@@ -397,7 +430,7 @@ function DashBoard() {
 
 
 </div>
-<div className='lg:w-125  h-64 border-1 border-black p-10 bg-white rounded-2.5xl'>
+<div className='lg:w-125  h-64  p-10 bg-white rounded-2.5xl'>
 
 {/* heading*/}
 <div class = "flex flex-row justify-between">
@@ -415,7 +448,7 @@ function DashBoard() {
 </div>
 
 
-<div className='flex flex-col   border-2 border-black'>
+<div className='flex flex-col   '>
 
 
   <div className='lg:h-16 flex flex-row my-3'>
@@ -423,9 +456,9 @@ function DashBoard() {
     <div className='w-1 h-full bg-lightgreen'></div>
 
     <div className='flex flex-col ml-2 '>
-        <p className='font-bold text-sm '>Meeting with suppliers from Kuta Bali</p>
-        <p className=' flex items-start font-normal text-xs text-texts'>14.00-15.00</p>
-        <p className=' flex items-start font-normal text-xs text-texts'>at Sunset Road, Kuta, Bali </p>
+        <p className='font-bold text-sm  font-lato'>Meeting with suppliers from Kuta Bali</p>
+        <p className=' flex items-start font-normal font-lato text-xs text-texts'>14.00-15.00</p>
+        <p className=' flex items-start font-normal font-lato text-xs text-texts'>at Sunset Road, Kuta, Bali </p>
       </div>
 
 
@@ -441,9 +474,9 @@ function DashBoard() {
 <div className='w-1 h-full bg-lightpurple'></div>
 
 <div className='flex flex-col ml-2 '>
-    <p className='font-bold text-sm '>Meeting with suppliers from Kuta Bali</p>
-    <p className=' flex items-start font-normal text-xs text-texts'>14.00-15.00</p>
-    <p className=' flex items-start font-normal text-xs text-texts'>at Sunset Road, Kuta, Bali </p>
+    <p className='font-bold text-sm font-lato'>Check operation at Giga Factory 1</p>
+    <p className=' flex items-start font-normal font-lato text-xs text-texts'>18.00-20.00</p>
+    <p className=' flex items-start font-normal font-lato text-xs text-texts'>at Central Jakarta </p>
   </div>
 
 
