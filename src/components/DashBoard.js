@@ -140,7 +140,7 @@ function DashBoard() {
 
 
     
-    <div className=' flex flex-row lg:h-7  border-2 border-black lg:my-5'>
+    <div className=' flex flex-row lg:h-7  lg:my-5'>
       <p className='text-2xl font-bold '>Dashboard</p>
       <div className='flex flex-row justify-end w-full ' >
       <div class="flex items-center justify-center">
