@@ -243,7 +243,7 @@ function DashBoard() {
 
     <div className=' flex  md:flex-row flex-col items-center lg:justify-between  my-9'>
 
-      <div className='h-30 w-56  my-5 lg:my-0 bg-Card1 rounded-2.5xl p-5'> 
+      <div className='h-30 w-full md:w-56  my-5 lg:my-0 bg-Card1 rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.download}></img>
 
@@ -257,7 +257,7 @@ function DashBoard() {
       </div>
       
       </div>
-      <div className='h-30 w-56 my-5 lg:my-0 bg-Card2Pink rounded-2.5xl p-5'> 
+      <div className='h-30 w-full md:w-56 my-5 lg:my-0 bg-Card2Pink rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.clipped}></img>
 
@@ -271,7 +271,7 @@ function DashBoard() {
       </div>
       
       </div>
-      <div className='h-30 w-56 my-5 lg:my-0 bg-Card3Pink rounded-2.5xl p-5'> 
+      <div className='h-30 w-full md:w-56 my-5 lg:my-0 bg-Card3Pink rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.like}></img>
 
@@ -285,7 +285,7 @@ function DashBoard() {
       </div>
       
       </div>
-      <div className='h-30 w-56 my-5 lg:my-0 bg-Card4blue rounded-2.5xl p-5'> 
+      <div className='h-30 w-full md:w-56 my-5 lg:my-0 bg-Card4blue rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.people}></img>
 
