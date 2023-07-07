@@ -40,22 +40,22 @@ function Signup() {
 const navigate = useNavigate();
     
     return (
-        <div className='flex flex-row'>
-        <div className = "w-2/5 bg-black h-screen">
+        <div className='flex lg:flex-row flex-col'>
+        <div className = "w-full lg:w-2/5 bg-black h-screen">
           <div className="flex justify-center items-center  ">
-          <div className='text-white  text-7xl font-bold font-montse  lg:py-80'>Board.</div>
+          <div className='text-white  text-7xl font-bold font-montse  py-60 lg:py-80'>Board.</div>
           </div>
     
     
         </div>
-        <div className=" w-3/5 bg-admin-whiteSmokeLight">
+        <div className="w-full lg:w-3/5 bg-admin-whiteSmokeLight">
     
-          <div className=' lg:mx-60 lg:my-28 '>
+          <div className=' lg:mx-60 lg:my-24  mx-10 my-10 '>
     
             <p className='font-monste font-bold text-start text-4xl'>Sign Up</p>
             <p className='font-lato pt-2 font-normal  text-start text-base'>Sign up to your Account</p>
     
-            <div className= "my-7 flex flex-row">
+            <div className= "my-4 lg:my-7 flex flex-row">
             <button  class=" flex w-48 mr-6 opacity-75 h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.google}></img>Sign in with Google</button>
             <button  class=" flex ml-6 w-48 opacity-75  h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.apple}></img>Sign in with Apple</button>
     

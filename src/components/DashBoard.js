@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 
 import { Resources } from '../Resources'
 
@@ -129,15 +129,54 @@ function DashBoard() {
     { title: "Dragons", value: generatedNumbers[2], color: "#EE8484" },
   ];
 
- 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const handleMediaQueryChange = (e) => {
+      setIsMobile(e.matches);
+    };
+
+    handleMediaQueryChange(mediaQuery);
+    mediaQuery.addListener(handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
   
   return (
     <>
+
+    {isMobile && 
+    
+    <>
+    <div className='fixed bottom-0 w-full  bg-black'>
+
+
+      <div className='flex flex-row justify-between'>
+
+        <img  className=" px-5 py-5 font-bold" src={Resources.images.dashboard}></img>
+        <img  className=" px-5 py-5" src={Resources.images.transactions}></img>
+        <img  className=" px-5 py-5" src={Resources.images.schedule}></img>
+        <img  className=" px-5 py-5" src={Resources.images.user}></img>
+        <img  className=" px-5 py-5" src={Resources.images.settings}></img>
+
+      </div>
+    
+
+
+
+
+    </div>
+    
+    </>}
     <div className=" flex flex-row bg-admin-whiteSmokeLight p-6 ">
 
 
     
-    <div className="lg:w-1/5  fixed overflow-y-auto  bg-black text-white rounded-xxlg ">
+    <div className="lg:w-1/5   lg:fixed overflow-y-auto  bg-black text-white rounded-xxlg hidden md:block">
 
         <div className='p-12 '>
 
@@ -168,19 +207,19 @@ function DashBoard() {
     </div>
 
 
-    <div className = "w-4/5  flex-1  h-full overflow-y-auto ml-72">
+    <div className = "lg:w-4/5   flex-1  h-full overflow-y-auto lg:ml-72">
     <div className='lg:px-12'>
 
 
     
     <div className=' flex flex-row lg:h-7  lg:my-5'>
-      <p className='text-2xl font-bold '>Dashboard</p>
+      <p className='text-sm  md:text-2xl font-bold '>Dashboard</p>
       <div className='flex flex-row justify-end w-full ' >
       <div class="flex items-center justify-center">
 
 
 
-    <div class="flex justify-between bg-white w-44 rounded ">
+    <div class="flex justify-between bg-white w-28 md:w-44 rounded ">
        
         <p className=' px-2 py-0.5 '> Search... </p>
         <div className=' '>
@@ -202,9 +241,9 @@ function DashBoard() {
     </div>
 
 
-    <div className=' flex  md:flex-row flex-col justify-between  my-9'>
+    <div className=' flex  md:flex-row flex-col items-center lg:justify-between  my-9'>
 
-      <div className='h-30 w-56  bg-Card1 rounded-2.5xl p-5'> 
+      <div className='h-30 w-56  my-5 lg:my-0 bg-Card1 rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.download}></img>
 
@@ -218,7 +257,7 @@ function DashBoard() {
       </div>
       
       </div>
-      <div className='h-30 w-56  bg-Card2Pink rounded-2.5xl p-5'> 
+      <div className='h-30 w-56 my-5 lg:my-0 bg-Card2Pink rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.clipped}></img>
 
@@ -232,7 +271,7 @@ function DashBoard() {
       </div>
       
       </div>
-      <div className='h-30 w-56  bg-Card3Pink rounded-2.5xl p-5'> 
+      <div className='h-30 w-56 my-5 lg:my-0 bg-Card3Pink rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.like}></img>
 
@@ -246,7 +285,7 @@ function DashBoard() {
       </div>
       
       </div>
-      <div className='h-30 w-56  bg-Card4blue rounded-2.5xl p-5'> 
+      <div className='h-30 w-56 my-5 lg:my-0 bg-Card4blue rounded-2.5xl p-5'> 
       <div className='  border-red-900 flex justify-end'>
         <img src ={Resources.images.people}></img>
 
@@ -330,7 +369,7 @@ function DashBoard() {
 
 
 {/* Graph */}
-<div   className='flex flex-row justify-between'>
+<div   className='flex lg:flex-row flex-col justify-between mb-15 md:mb-0'>
 {/* Left region*/}
 <div className='lg:w-125 h-64  p-10 bg-white rounded-2.5xl'>
 
@@ -391,7 +430,7 @@ function DashBoard() {
         <img  className = "p-1" src={Resources.images.circle2}></img>
         <div>
         <div className='flex flex-col'>
-        <p className='font-bold text-sm font-montse '>Custom short Pants</p>
+        <p className='font-bold text-sm font-montse '>Custom Shorts</p>
         <p className=' flex items-start font-normal text-xs text-texts'>{generatedNumbers[1]}%</p>
       </div>
 
@@ -430,7 +469,7 @@ function DashBoard() {
 
 
 </div>
-<div className='lg:w-125  h-64  p-10 bg-white rounded-2.5xl'>
+<div className='lg:w-125  mt-10 lg:mt-0 h-64  p-10 bg-white rounded-2.5xl'>
 
 {/* heading*/}
 <div class = "flex flex-row justify-between">
@@ -448,12 +487,12 @@ function DashBoard() {
 </div>
 
 
-<div className='flex flex-col   '>
+<div className='flex flex-col  '>
 
 
   <div className='lg:h-16 flex flex-row my-3'>
 
-    <div className='w-1 h-full bg-lightgreen'></div>
+    <div className='w-1 h-16 md:h-full bg-lightgreen'></div>
 
     <div className='flex flex-col ml-2 '>
         <p className='font-bold text-sm  font-lato'>Meeting with suppliers from Kuta Bali</p>
@@ -471,7 +510,7 @@ function DashBoard() {
   </div>
   <div className='lg:h-16 flex flex-row my-3'>
 
-<div className='w-1 h-full bg-lightpurple'></div>
+<div className='w-1 h-16 md:h-full bg-lightpurple'></div>
 
 <div className='flex flex-col ml-2 '>
     <p className='font-bold text-sm font-lato'>Check operation at Giga Factory 1</p>
