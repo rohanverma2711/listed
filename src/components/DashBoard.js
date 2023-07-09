@@ -3,6 +3,7 @@ import React,{useEffect,useState} from 'react'
 import { Resources } from '../Resources'
 
 import { PieChart } from "react-minimal-pie-chart";
+import { AiOutlineSearch } from "react-icons/ai";
 
 // import CanvasJSReact from '@canvasjs/react-charts';
 // var CanvasJSChart = CanvasJSReact.CanvasJSChart;
@@ -208,18 +209,18 @@ function DashBoard() {
 
 
     <div className = "lg:w-4/5   flex-1  h-full overflow-y-auto lg:ml-72">
-    <div className='lg:px-12'>
+    <div className='md:px-4 lg:px-12'>
 
 
     
     <div className=' flex flex-row lg:h-7  lg:my-5'>
-      <p className='text-sm  md:text-2xl font-bold '>Dashboard</p>
+      <p className='text-lg  md:text-2xl font-bold '>Dashboard</p>
       <div className='flex flex-row justify-end w-full ' >
       <div class="flex items-center justify-center">
 
 
 
-    <div class="flex justify-between bg-white w-28 md:w-44 rounded ">
+ {!isMobile &&    <div class="flex justify-between bg-white w-44 rounded-lg p-0.5">
        
         <p className=' px-2 py-0.5 '> Search... </p>
         <div className=' '>
@@ -227,7 +228,13 @@ function DashBoard() {
         </div>
 
         
-    </div>
+    </div>}
+    {isMobile && 
+    <AiOutlineSearch
+              className="lg:!hidden dark:!text-whiteSmoke"
+              size={24}
+            />
+    }
 
 
 </div>
@@ -311,7 +318,7 @@ function DashBoard() {
 
 
 {/* Chart. */}
-<div className='h-80 mb-10  p-10 bg-white rounded-2.5xl'>
+<div className='h-80 mb-10  p-8 md:p-10 bg-white rounded-2.5xl'>
 
   {/* heading */}
 <p className=' flex  items-start font-bold text-lg'>Activities</p>
@@ -371,7 +378,7 @@ function DashBoard() {
 {/* Graph */}
 <div   className='flex lg:flex-row flex-col justify-between mb-15 md:mb-0'>
 {/* Left region*/}
-<div className='lg:w-125 h-64  p-10 bg-white rounded-2.5xl'>
+<div className='lg:w-131.25 h-64  p-8 md:p-10 lg:mr-2 bg-white rounded-2.5xl'>
 
 
 {/* heading */}
@@ -404,7 +411,7 @@ function DashBoard() {
 
 </div>
 {/* Right Region of pie chart*/}
-<div className='w-7/12  ml-5'>
+<div className='w-7/12  ml-8'>
 
   <div className='flex flex-col   '>
 
@@ -469,7 +476,7 @@ function DashBoard() {
 
 
 </div>
-<div className='lg:w-125  mt-10 lg:mt-0 h-64  p-10 bg-white rounded-2.5xl'>
+<div className='lg:w-131.25  mt-10 lg:mt-0 h-64  p-8 md:p-10 bg-white rounded-2.5xl'>
 
 {/* heading*/}
 <div class = "flex flex-row justify-between">
@@ -492,7 +499,7 @@ function DashBoard() {
 
   <div className='lg:h-16 flex flex-row my-3'>
 
-    <div className='w-1 h-16 md:h-full bg-lightgreen'></div>
+    <div className='w-1 h-16  bg-lightgreen'></div>
 
     <div className='flex flex-col ml-2 '>
         <p className='font-bold text-sm  font-lato'>Meeting with suppliers from Kuta Bali</p>
@@ -510,7 +517,7 @@ function DashBoard() {
   </div>
   <div className='lg:h-16 flex flex-row my-3'>
 
-<div className='w-1 h-16 md:h-full bg-lightpurple'></div>
+<div className='w-1 h-16  bg-lightpurple'></div>
 
 <div className='flex flex-col ml-2 '>
     <p className='font-bold text-sm font-lato'>Check operation at Giga Factory 1</p>
