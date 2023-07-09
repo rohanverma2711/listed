@@ -318,7 +318,7 @@ function DashBoard() {
 
 
 {/* Chart. */}
-<div className='h-80 mb-10  p-8 md:p-10 bg-white rounded-2.5xl'>
+<div className='h-80 mb-10  p-5 md:p-10 bg-white rounded-2.5xl'>
 
   {/* heading */}
 <p className=' flex  items-start font-bold text-lg'>Activities</p>
@@ -378,7 +378,7 @@ function DashBoard() {
 {/* Graph */}
 <div   className='flex lg:flex-row flex-col justify-between mb-15 md:mb-0'>
 {/* Left region*/}
-<div className='lg:w-131.25 h-64  p-8 md:p-10 lg:mr-2 bg-white rounded-2.5xl'>
+<div className='lg:w-131.25 h-64  p-5 md:p-10 lg:mr-2 bg-white rounded-2.5xl'>
 
 
 {/* heading */}
@@ -476,7 +476,7 @@ function DashBoard() {
 
 
 </div>
-<div className='lg:w-131.25  mt-10 lg:mt-0 h-64  p-8 md:p-10 bg-white rounded-2.5xl'>
+<div className='lg:w-131.25  mt-10 lg:mt-0 h-64  p-5 md:p-10 bg-white rounded-2.5xl'>
 
 {/* heading*/}
 <div class = "flex flex-row justify-between">

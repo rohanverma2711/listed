@@ -56,8 +56,8 @@ const navigate = useNavigate();
             <p className='font-lato pt-2 font-normal  text-start text-base'>Sign up to your Account</p>
     
             <div className= "my-4 lg:my-7 flex flex-row">
-            <button  class=" flex w-48 mr-6 opacity-75 h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.google}></img>Sign in with Google</button>
-            <button  class=" flex ml-6 w-48 opacity-75  h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.apple}></img>Sign in with Apple</button>
+            <button  class=" flex w-48 mr-6 opacity-75 md:h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.google}></img>Sign in with Google</button>
+            <button  class=" flex ml-6 w-48 opacity-75  md:h-7 bg-white text-greyL justify-center rounded-xlg px-3 py-1.5 text-xs font-normal "><img className='pr-2' src = {Resources.images.apple}></img>Sign in with Apple</button>
     
         
             </div>
