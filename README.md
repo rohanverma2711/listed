@@ -2,6 +2,9 @@
 
 This project was developed for Listed Inc. It is an app called Board which i contains data about your Business which is shown using Charts.
 
+### Here is the Figma  
+<a href = "https://www.figma.com/file/gKLhBDaTmdNDzHjsvqFMmC/Front-End-Developer-Task?type=design&node-id=0-188&mode=design&t=I4CvqCCa9sPyY938-0">Link</a>
+
 ## Available Scripts
 
 In the project directory, you can run:
