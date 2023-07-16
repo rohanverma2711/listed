@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Listed Inc(OpenInApp) Board App
 
 This project was developed for Listed Inc. It is an app called Board which i contains data about your Business which is shown using Charts.
 
